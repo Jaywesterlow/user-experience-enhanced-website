@@ -1,0 +1,98 @@
+main > ul.favorites {
+
+    & li {
+        background-color: var(--regent-blue);
+        margin-bottom: 2rem;
+        border-radius: 2rem;
+    }
+
+    & > li > figure  {
+        width: 100%;
+        border-radius: 2rem 2rem 0 0;
+        overflow: hidden;
+        -webkit-mask-image: linear-gradient(#000, #000, rgba(0,0,0,0));
+        mask-image: linear-gradient(#000, #000, rgba(0,0,0,0));
+
+        & img {
+            width: 100%;
+            display: block;
+        }
+    }
+    
+    & > li > article  {
+        padding: 1rem 1.5rem 0;
+
+        & h2 > a {
+            color: var(--bahama-blue);
+            font-size: 1.75rem;
+            margin-bottom: .4rem;
+        }
+
+        & p {
+            margin-bottom: .2rem;
+        }
+    }
+
+    & li > div {
+        padding:  1rem 1.5rem;
+
+        & button.rating {
+            padding: 1rem 2rem;
+            border: 2px solid red;
+        }
+        
+        & button.heart {
+            padding: 1rem 2rem;
+            border: 2px solid blue;
+        }
+    }
+
+    
+    
+}
+
+@media only screen and (min-width: 1024px) {
+    main > ul.favorites {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+
+        & li {
+            background-color: var(--regent-blue);
+            margin-bottom: 0;
+            border-radius: 1rem;
+            z-index: 1;
+        }
+    
+        & > li > figure  {
+            width: 100%;
+            border-radius: 0;
+            padding: 2rem 2rem 0 2rem;
+            overflow: hidden;
+            -webkit-mask-image: none;
+            mask-image: none;
+    
+            & img {
+                border-radius: 1rem;
+            }
+        }
+        
+        & > li > article  {
+            padding:  1rem 1.5rem 0;
+    
+            & h2 > a {
+                color: var(--bahama-blue);
+                font-size: 1.75rem;
+                margin-bottom: .4rem;
+            }
+    
+            & p {
+                margin-bottom: .2rem;
+            }
+        }
+
+        & li > div {
+            padding:  1rem 1.5rem;
+        }
+    }
+}

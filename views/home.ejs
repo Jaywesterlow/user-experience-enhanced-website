@@ -1,0 +1,38 @@
+<%- include('partials/header', {current: '/home'}); %>
+<%- include('partials/navigation', {current: '/home'}); %>
+
+<h1>Mijn favorieten</h1>
+
+<main>
+
+<form class="dropdown">
+    <legend>Sorteer op:</legend>
+    <div class="sort">
+        <!-- Sorteer deze pagina standaard, op stad of prijs -->
+        <a href=""> Standaard</a>
+        <a href="/?sort=city"> Stad</a>
+        <a href="/?sort=price"> Prijs</a>
+    </div>
+</form>
+ 
+<ul class="favorites">
+<% houses.forEach(house => { %>
+        <li>
+            <figure>
+                <img src="https://fdnd-agency.directus.app/assets/<%= house.poster_image %>" alt="house image">
+            </figure>
+            <article>
+                <h2><a href="#"><%= house.street %> <%= house.house_nr%><%= house.nr_addition?house.nr_addition:''%></a></h2>
+                <p><%= house.postal_code %> <%= house.city%></p>
+                <p><%= "€" + house.price %></p>
+            </article>
+            <div>
+                <button class="rating"></button>
+                <button class="heart"></button>
+            </div>
+        </li>
+        <% }); %>
+    </ul>
+
+<%- include('partials/footer', {current: '/home'}); %>
+<%- include('partials/foot', {current: '/home'}); %>
