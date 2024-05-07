@@ -16,6 +16,7 @@ main > ul.favorites {
     & img {
       width: 100%;
       display: block;
+      min-height: 174px;
     }
   }
 
@@ -145,6 +146,7 @@ details summary ~ *, details[open] summary ~ * {
       mask-image: none;
 
       & img {
+        min-height: 224px;
         border-radius: 1rem 1rem 0 0;
       }
     }
@@ -163,6 +165,7 @@ details summary ~ *, details[open] summary ~ * {
         color: var(--bahama-blue);
         font-size: 2rem;
         margin-bottom: 0.4rem;
+        text-shadow: #000 1px 1px 3px;
       }
 
       & p {

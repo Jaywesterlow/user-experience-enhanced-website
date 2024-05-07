@@ -9,9 +9,9 @@
     <legend>Sorteer op:</legend>
     <div class="sort">
         <!-- Sorteer deze pagina standaard, op stad of prijs -->
-        <a href=""> Standaard</a>
-        <a href="/?sort=city"> Stad</a>
-        <a href="/?sort=price"> Prijs</a>
+        <a aria-label="Standaard volgorde" href=""> Standaard</a>
+        <a aria-label="Sorteer naar stad" href="/?sort=city"> Stad</a>
+        <a aria-label="Sorteer naar prijs" href="/?sort=price"> Prijs</a>
     </div>
 </form>
  
@@ -23,10 +23,10 @@
                 <img src="https://fdnd-agency.directus.app/assets/<%= house.poster_image %>" alt="house image">
             </figure>
             <article>
-                <h2><a href="#"><%= house.street %> <%= house.house_nr%><%= house.nr_addition?house.nr_addition:''%></a></h2>
+                <h2><a aria-label="Link naar desbetreffende huis" href="#"><%= house.street %> <%= house.house_nr%><%= house.nr_addition?house.nr_addition:''%></a></h2>
                 <p><%= house.postal_code %> <%= house.city%></p>
                 <p><%= "€" + house.price %></p>
-                <button class="heart">
+                <button aria-label="Favorieten toggle knop" class="heart">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.205 4.791a5.938 5.938 0 0 0-4.209-1.754A5.906 5.906 0 0 0 12 4.595a5.904 5.904 0 0 0-3.996-1.558 5.942 5.942 0 0 0-4.213 1.758c-2.353 2.363-2.352 6.059.002 8.412L12 21.414l8.207-8.207c2.354-2.353 2.355-6.049-.002-8.416z"></path></svg>
                 </button>
             </article>
@@ -35,7 +35,7 @@
                 <summary>Details</summary>
                 <ul class="user-rating-list">
                     <li>
-                        <p>Algemeen</p>
+                        <p>Oppervlakte</p>
                         <ul>
                                 <li>
                                     <label for="star"></label>
@@ -45,22 +45,19 @@
                         </ul>
                     </li>
                     <li>
-                        <p>Keuken</p>
+                        <p>Badkamer</p>
                     </li>
                     <li>
-                        <p>Badkamer</p>
+                        <p>Keuken</p>
                     </li>
                     <li>
                         <p>Tuin</p>
                     </li>
                     <li>
-                        <p>Prijs</p>
-                    </li>
-                    <li>
                         <p>Ligging</p>
                     </li>
                     <li>
-                        <p>Oppervlakte</p>
+                        <p>Prijs</p>
                     </li>
                 </ul>
             </details>
