@@ -1,98 +1,202 @@
 main > ul.favorites {
+  & li {
+    position: relative;
+    background-color: var(--regent-blue);
+    margin-bottom: 2rem;
+    border-radius: 2rem;
+  }
 
-    & li {
-        background-color: var(--regent-blue);
-        margin-bottom: 2rem;
-        border-radius: 2rem;
+  & > li > div > figure {
+    width: 100%;
+    border-radius: 2rem 2rem 0 0;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(#000, #000, rgba(0, 0, 0, 0));
+    mask-image: linear-gradient(#000, #000, rgba(0, 0, 0, 0));
+
+    & img {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  & > li > div > article {
+    padding: 1rem 1.5rem 0;
+
+    & h2 > a {
+      color: var(--bahama-blue);
+      font-size: 1.75rem;
+      margin-bottom: 0.4rem;
     }
 
-    & > li > figure  {
-        width: 100%;
-        border-radius: 2rem 2rem 0 0;
-        overflow: hidden;
-        -webkit-mask-image: linear-gradient(#000, #000, rgba(0,0,0,0));
-        mask-image: linear-gradient(#000, #000, rgba(0,0,0,0));
-
-        & img {
-            width: 100%;
-            display: block;
-        }
-    }
-    
-    & > li > article  {
-        padding: 1rem 1.5rem 0;
-
-        & h2 > a {
-            color: var(--bahama-blue);
-            font-size: 1.75rem;
-            margin-bottom: .4rem;
-        }
-
-        & p {
-            margin-bottom: .2rem;
-        }
+    & p {
+      margin-bottom: 0.2rem;
     }
 
-    & li > div {
-        padding:  1rem 1.5rem;
+    & > button {
+      cursor: pointer;
+      position: absolute;
+      border-radius: 20%;
 
-        & button.rating {
-            padding: 1rem 2rem;
-            border: 2px solid red;
-        }
-        
-        & button.heart {
-            padding: 1rem 2rem;
-            border: 2px solid blue;
-        }
+      &.heart {
+        top: 1rem;
+        right: 1rem;
+        background: none;
+        border: none;
+        border-radius: 100%;
+        width: 3rem;
+        height: 3rem;
+        fill: var(--heart-inner);
+        stroke: var(--heart-outer);
+        transition: all 0.5s ease;
+      }
+
+      &.heart-favorite {
+        fill: var(--silver);
+        stroke: var(--silver-chalice);
+      }
+
+      & svg {
+        border-radius: 100%;
+      }
     }
-
-    
-    
+  }
 }
 
-@media only screen and (min-width: 1024px) {
-    main > ul.favorites {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
 
-        & li {
-            background-color: var(--regent-blue);
-            margin-bottom: 0;
-            border-radius: 1rem;
-            z-index: 1;
-        }
-    
-        & > li > figure  {
-            width: 100%;
-            border-radius: 0;
-            padding: 2rem 2rem 0 2rem;
-            overflow: hidden;
-            -webkit-mask-image: none;
-            mask-image: none;
-    
-            & img {
-                border-radius: 1rem;
-            }
-        }
-        
-        & > li > article  {
-            padding:  1rem 1.5rem 0;
-    
-            & h2 > a {
-                color: var(--bahama-blue);
-                font-size: 1.75rem;
-                margin-bottom: .4rem;
-            }
-    
-            & p {
-                margin-bottom: .2rem;
-            }
-        }
+/* ---------------------------------------- */
+/*                                          */
+/*                                          */
+/*                                          */
+/* ---------------------------------------- */
 
-        & li > div {
-            padding:  1rem 1.5rem;
-        }
+
+
+details {
+  cursor: pointer;
+  font-family: "regular";
+  font-size: 1.3rem;
+}
+
+summary {
+  position: relative;
+  padding: 1rem 2rem 1rem 2.75rem;
+  border-radius: .5rem;
+  width: fit-content;
+  list-style: none;
+}
+
+summary::before {
+  content: "+";
+  position: absolute;
+  left: 1rem;
+  top: .6rem;
+  font-size: 2rem;
+}
+
+details[open] summary {
+  border-radius: .5rem .5rem 0 0;
+  border: none;
+}
+
+summary + p {
+  margin: 0;
+  padding: 0;
+  max-width: fit-content;
+  padding: 1rem;
+  border-radius: 0 .5rem .5rem .5rem;
+}
+
+details summary ~ *, details[open] summary ~ * {
+  transition: 1s all ease-in-out;
+}
+
+
+
+/* ---------------------------------------- */
+/*                                          */
+/*                                          */
+/*                                          */
+/* ---------------------------------------- */
+
+
+@media only screen and (min-width: 768px) {
+  main > ul.favorites {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+
+    & li {
+      background-color: var(--regent-blue);
+      margin-bottom: 0;
+      border-radius: 1rem;
+      z-index: 1;
+      overflow: hidden;
+
+      & div {
+        position: relative;
+      }
     }
+
+    & > li > div > figure {
+      width: 100%;
+      border-radius: 0;
+      overflow: hidden;
+      -webkit-mask-image: none;
+      mask-image: none;
+
+      & img {
+        border-radius: 1rem 1rem 0 0;
+      }
+    }
+
+    & > li > div > article {
+      text-align: left;
+      padding: 35% 0 0 4rem;
+      background-color: rgb(var(--mine-shaft), 0.4);
+
+      height: 100%;
+      position: absolute;
+      top: 0;
+      width: 100%;
+
+      & h2 > a {
+        color: var(--bahama-blue);
+        font-size: 2rem;
+        margin-bottom: 0.4rem;
+      }
+
+      & p {
+        margin-bottom: 0.2rem;
+        color: var(--gallery);
+      }
+
+      & > button {
+        cursor: pointer;
+        position: absolute;
+        border-radius: 20%;
+
+        &.heart {
+          top: 1.5rem;
+          right: 1rem;
+          background: none;
+          border: none;
+          border-radius: 100%;
+          width: 3rem;
+          height: 3rem;
+          fill: var(--heart-inner);
+          stroke: var(--heart-outer);
+          transition: all 0.5s ease;
+        }
+
+        &.heart-favorite {
+          fill: var(--silver);
+          stroke: var(--silver-chalice);
+        }
+
+        & svg {
+          border-radius: 100%;
+        }
+      }
+    }
+  }
 }

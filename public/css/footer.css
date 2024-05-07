@@ -1,0 +1,92 @@
+
+.container {
+    max-width: 95rem;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer {
+
+    background-color: var(--color-Footer);
+    padding: 4.375rem 0;
+    margin: 4.375rem 0 0 0;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 1.125rem;
+    color: var(--mine-shaft);
+    text-transform: capitalize;
+    margin-bottom: 2.188rem;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col h4::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: var(--web-orange);
+    height: 2px;
+    box-sizing: border-box;
+    width: 3.125rem;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 1rem;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-weight: 300;
+    color: var(--lochmara);
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--malibu);
+    padding-left: 8px;
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 2.5rem;
+    width: 2.5rem;
+    background-color: #E6E6E6;
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 2.5rem;
+    border-radius: 50%;
+    color: var(--color-White);
+    transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+    color: var(--mine-shaft);
+    background-color: var(--mine-shaft);
+}
+
+@media (max-width: 47.938rem) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 1.875rem;
+    }
+}
+@media (max-width: 35.875rem) {
+    .footer-col {
+        width: 100%;
+        padding: 0 4rem;
+    }
+}

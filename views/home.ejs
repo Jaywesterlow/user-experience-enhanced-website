@@ -18,6 +18,7 @@
 <ul class="favorites">
 <% houses.forEach(house => { %>
         <li>
+            <div>
             <figure>
                 <img src="https://fdnd-agency.directus.app/assets/<%= house.poster_image %>" alt="house image">
             </figure>
@@ -25,14 +26,48 @@
                 <h2><a href="#"><%= house.street %> <%= house.house_nr%><%= house.nr_addition?house.nr_addition:''%></a></h2>
                 <p><%= house.postal_code %> <%= house.city%></p>
                 <p><%= "€" + house.price %></p>
+                <button class="heart">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.205 4.791a5.938 5.938 0 0 0-4.209-1.754A5.906 5.906 0 0 0 12 4.595a5.904 5.904 0 0 0-3.996-1.558 5.942 5.942 0 0 0-4.213 1.758c-2.353 2.363-2.352 6.059.002 8.412L12 21.414l8.207-8.207c2.354-2.353 2.355-6.049-.002-8.416z"></path></svg>
+                </button>
             </article>
-            <div>
-                <button class="rating"></button>
-                <button class="heart"></button>
             </div>
+            <details>
+                <summary>Details</summary>
+                <ul class="user-rating-list">
+                    <li>
+                        <p>Algemeen</p>
+                        <ul>
+                                <li>
+                                    <label for="star"></label>
+                                    <input type="radio" name="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(128, 128, 128);"><path d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z"></path></svg>
+                                </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>Keuken</p>
+                    </li>
+                    <li>
+                        <p>Badkamer</p>
+                    </li>
+                    <li>
+                        <p>Tuin</p>
+                    </li>
+                    <li>
+                        <p>Prijs</p>
+                    </li>
+                    <li>
+                        <p>Ligging</p>
+                    </li>
+                    <li>
+                        <p>Oppervlakte</p>
+                    </li>
+                </ul>
+            </details>
         </li>
         <% }); %>
     </ul>
 
+</main>
 <%- include('partials/footer', {current: '/home'}); %>
 <%- include('partials/foot', {current: '/home'}); %>

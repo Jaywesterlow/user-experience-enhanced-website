@@ -55,11 +55,16 @@
   --silver-tree: #66ba96;
   --petite-orchid: #e09199;
 
-  /* Gray values */
+  /* gray values */
+  --color-Footer: #F2F2F2;
   --gallery: #ededed;
   --silver: #ccc;
   --silver-chalice: #999;
   --dove-gray: #666;
+
+  /* custom colors */
+  --heart-inner: rgb(255, 175, 175);
+  --heart-outer: rgb(255, 127, 127)
 }
 
 html {
@@ -123,4 +128,8 @@ p {
 }
 h1, h2, h3, h4, h5, h6, p {
   color: rgba(var(--mine-shaft), 1);
+}
+
+footer {
+  font-family: "regular";
 }
